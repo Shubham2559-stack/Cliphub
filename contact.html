@@ -3,83 +3,15 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>ClipHub - Contact Us</title>
+<title>ClipHub - Contact</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css" />
-
-<style>
-/* --- Contact page specific styles --- */
-.contact-box {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 16px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.contact-box input,
-.contact-box textarea {
-  width: 100%;
-  padding: 12px 14px;
-  background: rgba(0,0,0,0.3);
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  color: var(--text);
-  font-size: 1rem;
-  resize: none;
-}
-
-.contact-box input:focus,
-.contact-box textarea:focus {
-  outline: 2px solid var(--accent);
-  border-color: transparent;
-}
-
-#sendBtn {
-  background: linear-gradient(180deg,var(--accent),var(--accent-2));
-  border: none;
-  border-radius: 10px;
-  color: #111;
-  font-weight: 700;
-  font-size: 1.05rem;
-  padding: 12px;
-  cursor: pointer;
-  transition: transform 0.2s ease, opacity 0.2s ease;
-}
-
-#sendBtn:hover {
-  transform: translateY(-2px);
-}
-
-#sendBtn:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
-.popup {
-  position: fixed;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0,0,0,0.85);
-  color: #fff;
-  padding: 14px 22px;
-  border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-  z-index: 9999;
-  transition: opacity 0.3s ease;
-}
-
-</style>
 </head>
+
 <body>
 
+<!-- ===== HEADER ===== -->
 <header class="topbar">
   <div class="wrap">
     <div class="brand"><span class="dot"></span><h1>ClipHub</h1></div>
@@ -94,25 +26,41 @@
   </div>
 </header>
 
-<section class="wrap section">
+<!-- ===== BOOKMARK NOTICE ===== -->
+<section class="wrap section notice-section">
   <div class="notice">
     <span class="warn">⚠</span> Bookmark: cliphub.example
   </div>
 </section>
 
+<!-- ===== CONTACT SECTION ===== -->
 <section class="wrap section">
-  <div class="section-head"><h2 class="bar-title">Contact Us</h2></div>
+  <div class="section-head">
+    <h2 class="bar-title">Contact Us</h2>
+  </div>
 
   <div class="contact-box">
-    <form id="contactForm">
-      <input type="text" name="from_name" placeholder="Your Name" required>
-      <input type="email" name="reply_to" placeholder="Your Email" required>
-      <textarea name="message" rows="5" placeholder="Your Message..." required></textarea>
-      <button id="sendBtn" type="submit">Send Message</button>
+    <p class="muted">
+      Have any questions, issues, or feedback? Use the form below to get in touch with the ClipHub team.  
+      We usually respond within 24–48 hours.
+    </p>
+
+    <form class="contact-form">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" placeholder="Enter your name" required>
+
+      <label for="email">Your Email</label>
+      <input type="email" id="email" placeholder="Enter your email" required>
+
+      <label for="message">Your Message</label>
+      <textarea id="message" rows="5" placeholder="Write your message..." required></textarea>
+
+      <button type="submit" class="send-btn">Send Message</button>
     </form>
   </div>
 </section>
 
+<!-- ===== FOOTER ===== -->
 <footer class="footer">
   <div class="wrap">
     <div class="links">
@@ -125,45 +73,160 @@
   </div>
 </footer>
 
+<!-- ===== TO TOP BUTTON ===== -->
 <button class="to-top">↑</button>
 
+<!-- ===== POPUP MODAL ===== -->
+<div id="popup" class="popup-overlay">
+  <div class="popup-box">
+    <h3>✅ Message Sent!</h3>
+    <p>Thank you for contacting ClipHub. We’ll get back to you soon.</p>
+    <button id="closePopup">OK</button>
+  </div>
+</div>
+
+<!-- ===== INLINE STYLES ===== -->
+<style>
+.notice-section { margin-top: 0px; }
+
+.contact-box {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.contact-form label {
+  font-weight: 600;
+  color: var(--text);
+}
+.contact-form input,
+.contact-form textarea {
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--text);
+  padding: 10px 12px;
+  font-size: 1rem;
+  resize: none;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid var(--accent);
+}
+.send-btn {
+  background: linear-gradient(180deg, var(--accent), var(--accent-2));
+  border: none;
+  border-radius: 10px;
+  color: #111;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 12px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.send-btn:hover { transform: scale(1.02); }
+
+/* ===== POPUP ===== */
+.popup-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 3000;
+  justify-content: center;
+  align-items: center;
+}
+.popup-box {
+  background: var(--panel);
+  border-radius: 14px;
+  padding: 24px;
+  width: min(90%, 400px);
+  box-shadow: var(--shadow);
+  text-align: center;
+  animation: pop 0.25s ease;
+}
+.popup-box h3 {
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+.popup-box p {
+  color: var(--text);
+  margin-bottom: 18px;
+}
+.popup-box button {
+  background: linear-gradient(180deg,var(--accent),var(--accent-2));
+  color: #111;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  cursor: pointer;
+}
+@keyframes pop {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+</style>
+
+<!-- ===== EMAILJS SCRIPT ===== -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script>
-(function(){
-  emailjs.init("LiKbkgfXwK-4Gt14B"); // your EmailJS Public Key
-})();
-
-const form = document.getElementById("contactForm");
-const sendBtn = document.getElementById("sendBtn");
-
-form.addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  sendBtn.disabled = true;
-  sendBtn.textContent = "Sending...";
-
-  emailjs.sendForm("service_s5my3c9", "template_30xwuf7", this)
-    .then(() => {
-      showPopup("✅ Message Sent Successfully!");
-    })
-    .catch(() => {
-      showPopup("❌ Failed to send! Please try again.");
-    })
-    .finally(() => {
-      sendBtn.disabled = false;
-      sendBtn.textContent = "Send Message";
-      form.reset();
-    });
-});
-
-function showPopup(message){
-  const popup = document.createElement("div");
-  popup.className = "popup";
-  popup.textContent = message;
-  document.body.appendChild(popup);
-  setTimeout(()=> popup.style.opacity="0", 2200);
-  setTimeout(()=> popup.remove(), 2700);
-}
+  (function() {
+    emailjs.init("LiKbkgfXwK-4Gt14B"); // your EmailJS Public Key
+  })();
+  
+  const form = document.getElementById("contactForm");
+  const sendBtn = document.getElementById("sendBtn");
+  
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    
+    sendBtn.disabled = true;
+    sendBtn.textContent = "Sending...";
+    
+    emailjs.sendForm("service_s5my3c9", "template_30xwuf7", this)
+      .then(() => {
+        showPopup("✅ Message Sent Successfully!");
+      })
+      .catch(() => {
+        showPopup("❌ Failed to send! Please try again.");
+      })
+      .finally(() => {
+        sendBtn.disabled = false;
+        sendBtn.textContent = "Send Message";
+        form.reset();
+      });
+  });
+  
+  // --- popup function ---
+  function showPopup(message) {
+    const popup = document.createElement("div");
+    popup.textContent = message;
+    popup.style.position = "fixed";
+    popup.style.bottom = "40px";
+    popup.style.left = "50%";
+    popup.style.transform = "translateX(-50%)";
+    popup.style.background = "rgba(0,0,0,0.85)";
+    popup.style.color = "#fff";
+    popup.style.padding = "14px 22px";
+    popup.style.borderRadius = "10px";
+    popup.style.boxShadow = "0 4px 20px rgba(0,0,0,0.4)";
+    popup.style.zIndex = "9999";
+    popup.style.transition = "opacity 0.3s ease";
+    document.body.appendChild(popup);
+    setTimeout(() => popup.style.opacity = "0", 2200);
+    setTimeout(() => popup.remove(), 2700);
+  }
 </script>
 
 <script src="main.js" defer></script>
