@@ -235,3 +235,12 @@ img[loading="lazy"].loaded{opacity:1}
   color:var(--text);
   font-weight:600;
 }
+#sendBtn.sending::after {
+  content: "⏳";
+  margin-left: 8px;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
