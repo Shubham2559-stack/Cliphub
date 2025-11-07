@@ -264,3 +264,6 @@ document.querySelector(".to-top")?.addEventListener("click",()=>window.scrollTo(
 
 /* ---------- INIT ---------- */
 fetchSheetData();
+sendBtn.classList.add("sending");
+// after done:
+sendBtn.classList.remove("sending");
