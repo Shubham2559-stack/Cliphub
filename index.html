@@ -3,37 +3,128 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>ClipHub</title>
+<title>X ClipHub</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- ===== INLINE CSS FOR AD SYSTEM + ALIGNMENT FIX ===== -->
+<style>
+/* Base ad container */
+.ad-container {
+  background: #1b1f25;
+  border: 1px dashed var(--line);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  text-align: center;
+  font-size: 0.95rem;
+  margin: 20px 0;
+  overflow: hidden;
+  padding: 8px;
+}
+
+/* Ad sizes */
+.ad-container.top, .ad-container.bottom { min-height: 90px; }
+.ad-container.title { min-height: 90px; margin-top: 6px; } /* ✅ aligned perfectly */
+.ad-container.mid { min-height: 250px; }
+.ad-container.small { min-height: 60px; }
+
+/* Grid ad full width */
+.grid .ad-container { grid-column: 1 / -1; }
+
+.ad-placeholder { opacity: 0.85; }
+
+/* Sticky bottom ad */
+.sticky-ad {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(27,31,37,0.98);
+  border-top: 2px solid var(--accent);
+  text-align: center;
+  z-index: 4000;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  box-shadow: 0 -6px 18px rgba(0,0,0,0.45);
+}
+.sticky-ad .close-sticky {
+  position: absolute;
+  right: 10px;
+  top: 6px;
+  background: transparent;
+  border: none;
+  color: var(--accent);
+  font-size: 18px;
+  cursor: pointer;
+}
+@media (max-width: 480px) {
+  .sticky-ad { min-height: 48px; padding: 6px; }
+}
+
+/* Alignment fix between bar-title and ad container */
+.section-head {
+  display: flex;
+  align-items: flex-end; /* ✅ ensures bottom of "Latest Videos" aligns with top of ad */
+  justify-content: space-between;
+  margin-bottom: 10px; /* tighter spacing for smooth flow */
+}
+
+.bar-title {
+  margin-bottom: 0; /* removes extra gap below title */
+  padding-bottom: 6px;
+}
+
+.ad-box {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+}
+</style>
 </head>
 <body>
 
 <header class="topbar">
   <div class="wrap">
-    <div class="brand"><span class="dot"></span><h1>ClipHub</h1></div>
+   <div class="brand">
+  <h1><a href="index.html">X ClipHub</a></h1>
+</div>
+<button class="to-top"><i class="fa-solid fa-arrow-up-long"></i></button>
     <nav class="primary-nav">
       <ul class="nav-list">
-        <li><a href="category.html?cat=Trending">Trending</a></li>
-        <li><a href="category.html?cat=Vlogs">Vlogs</a></li>
-        <li><a href="category.html?cat=Tutorials">Tutorials</a></li>
-        <li><a href="category.html?cat=Music">Music</a></li>
+        <li><a href="category.html?cat=MMS">MMS</a></li>
+        <li><a href="category.html?cat=Models">Models</a></li>
+        <li><a href="category.html?cat=Premium">Premium</a></li>
+        <li><a href="category.html?cat=Onlyfans">Onlyfans</a></li>
       </ul>
     </nav>
   </div>
 </header>
 
+<!-- ===== AD #1 - TOP BANNER ===== -->
+<section class="wrap">
+  <div class="ad-container top">
+    <div class="ad-box">
+      <!-- Paste your Adsterra top banner script here -->
+      <p class="ad-placeholder">Ad Space (Top Banner) — Paste Adsterra script here</p>
+    </div>
+  </div>
+</section>
+
 <section class="wrap section top-search">
   <div class="search">
     <input type="text" id="searchInput" placeholder="Search...">
     <button id="searchBtn">🔍</button>
-  </div>
-</section>
-
-<section class="wrap">
-  <div class="notice">
-    <span class="warn">⚠</span> Bookmark: cliphub.example
   </div>
 </section>
 
@@ -47,17 +138,34 @@
       <option value="most">Most viewed videos</option>
     </select>
   </div>
+
+  <!-- ===== AD BELOW TITLE (Now perfectly aligned) ===== -->
+  <div class="ad-container title wrap" aria-label="ad-below-latest-title">
+    <div class="ad-box">
+      <p class="ad-placeholder">Ad Space (Below Latest Title) — Paste Adsterra script here</p>
+    </div>
+  </div>
+
   <div class="grid" id="latestGrid"></div>
 </section>
 
 <section class="wrap section">
   <h3 class="bar-title sm">About</h3>
-  <p class="muted">ClipHub demo layout. All content is managed from Google Sheets.</p>
+  <p class="muted">X ClipHub demo layout. All content is managed from Google Sheets.</p>
 </section>
 
 <section class="wrap section">
   <div class="section-head"><h2 class="bar-title">Random videos</h2></div>
   <div class="grid" id="randomGrid"></div>
+</section>
+
+<!-- ===== AD ABOVE FOOTER ===== -->
+<section class="wrap">
+  <div class="ad-container bottom">
+    <div class="ad-box">
+      <p class="ad-placeholder">Ad Space (Bottom Banner) — Paste Adsterra script here</p>
+    </div>
+  </div>
 </section>
 
 <footer class="footer">
@@ -72,8 +180,6 @@
   </div>
 </footer>
 
-<button class="to-top">↑</button>
-
 <template id="cardTpl">
 <article class="card">
   <div class="thumb">
@@ -85,6 +191,46 @@
 </article>
 </template>
 
+<!-- Sticky bottom ad -->
+<div class="sticky-ad" id="stickyAd">
+  <button class="close-sticky" onclick="document.getElementById('stickyAd').style.display='none'">×</button>
+  <div class="ad-box">
+    <p class="ad-placeholder">Sticky Ad (Responsive Banner) — Paste Adsterra script here</p>
+  </div>
+</div>
+
 <script src="main.js" defer></script>
+
+<!-- Dynamic in-grid ad insertion -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  function createAdElement(text, cls='ad-container mid'){
+    const el=document.createElement('div');
+    el.className=cls;
+    el.innerHTML=`<div class='ad-box'><p class='ad-placeholder'>${text}</p></div>`;
+    el.dataset.dynamicAd="true";
+    return el;
+  }
+  function insertAds(gridId,text){
+    const grid=document.getElementById(gridId);
+    if(!grid)return;
+    const obs=new MutationObserver(()=>{
+      const cards=grid.querySelectorAll('.card');
+      cards.forEach((c,i)=>{
+        if((i+1)%6===0){
+          const n=c.nextElementSibling;
+          if(!n||!n.classList.contains('ad-container')){
+            const ad=createAdElement(text);
+            c.insertAdjacentElement('afterend',ad);
+          }
+        }
+      });
+    });
+    obs.observe(grid,{childList:true});
+  }
+  insertAds('latestGrid','Ad Space (Between Latest Videos) — Paste Adsterra script here');
+  insertAds('randomGrid','Ad Space (Between Random Videos) — Paste Adsterra script here');
+});
+</script>
 </body>
 </html>
