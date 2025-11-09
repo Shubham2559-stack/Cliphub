@@ -3,10 +3,64 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>ClipHub - Privacy Policy</title>
+<title>X ClipHub - Privacy Policy</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- ===== INLINE CSS FOR ADS (OPTIMIZED) ===== -->
+<style>
+.ad-container {
+  background:#1b1f25;
+  border:1px dashed var(--line);
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--muted);
+  text-align:center;
+  font-size:.95rem;
+  margin:18px 0;
+  overflow:hidden;
+  padding:8px;
+}
+.ad-container.top,
+.ad-container.bottom { min-height:90px; }
+.ad-container.mid { min-height:250px; }
+.ad-placeholder { opacity:0.85; }
+
+/* ===== Sticky Bottom Ad ===== */
+.sticky-ad {
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  background:#1b1f25;
+  border-top:2px solid var(--accent);
+  text-align:center;
+  z-index:4000;
+  min-height:60px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.sticky-ad button {
+  position:absolute;
+  right:8px;
+  top:4px;
+  background:none;
+  border:none;
+  color:#ff709f;
+  font-size:18px;
+  cursor:pointer;
+}
+@media(max-width:768px){
+  .ad-container.top,
+  .ad-container.bottom { min-height:100px; }
+  .sticky-ad { min-height:50px; }
+}
+</style>
 </head>
 
 <body>
@@ -14,34 +68,42 @@
 <!-- ===== HEADER ===== -->
 <header class="topbar">
   <div class="wrap">
-    <div class="brand"><span class="dot"></span><h1>ClipHub</h1></div>
+    <div class="brand">
+      <h1><a href="index.html">X ClipHub</a></h1>
+    </div>
     <nav class="primary-nav">
       <ul class="nav-list">
-        <li><a href="category.html?cat=Trending">Trending</a></li>
-        <li><a href="category.html?cat=Vlogs">Vlogs</a></li>
-        <li><a href="category.html?cat=Tutorials">Tutorials</a></li>
-        <li><a href="category.html?cat=Music">Music</a></li>
+        <li><a href="category.html?cat=MMS">MMS</a></li>
+        <li><a href="category.html?cat=Models">Models</a></li>
+        <li><a href="category.html?cat=Premium">Premium</a></li>
+        <li><a href="category.html?cat=Onlyfans">Onlyfans</a></li>
       </ul>
     </nav>
   </div>
 </header>
 
-<!-- ===== BOOKMARK NOTICE ===== -->
-<section class="wrap section notice-section">
-  <div class="notice">
-    <span class="warn">⚠</span> Bookmark: cliphub.example
+<!-- ===== TOP AD ===== -->
+<section class="wrap">
+  <div class="ad-container top">
+    <p class="ad-placeholder">Ad Space (Top Banner 728x90 / 320x100)</p>
   </div>
 </section>
 
 <!-- ===== PRIVACY CONTENT ===== -->
 <section class="wrap section">
+
   <div class="section-head">
     <h2 class="bar-title">Privacy Policy</h2>
   </div>
 
+  <!-- ===== AD BELOW TITLE ===== -->
+  <div class="ad-container mid">
+    <p class="ad-placeholder">Ad Space (Below Title 300x250)</p>
+  </div>
+
   <div class="privacy-text">
     <p class="muted">
-      Welcome to <strong>ClipHub</strong>. Your privacy is important to us. This Privacy Policy explains how we collect, use, and protect your information while you use our site.
+      Welcome to <strong>X ClipHub</strong>. Your privacy is important to us. This Privacy Policy explains how we collect, use, and protect your information while you use our site.
     </p>
 
     <h3>1. Information We Collect</h3>
@@ -51,8 +113,13 @@
 
     <h3>2. Cookies</h3>
     <p class="muted">
-      ClipHub uses browser cookies to improve site performance and user experience. You can disable cookies in your browser settings at any time.
+      X ClipHub uses browser cookies to improve site performance and user experience. You can disable cookies in your browser settings at any time.
     </p>
+
+    <!-- ===== MID CONTENT AD ===== -->
+    <div class="ad-container mid">
+      <p class="ad-placeholder">Ad Space (Mid Content 300x250)</p>
+    </div>
 
     <h3>3. Embedded Content</h3>
     <p class="muted">
@@ -78,6 +145,13 @@
   </div>
 </section>
 
+<!-- ===== ABOVE FOOTER AD ===== -->
+<section class="wrap">
+  <div class="ad-container bottom">
+    <p class="ad-placeholder">Ad Space (Above Footer 728x90 / 320x100)</p>
+  </div>
+</section>
+
 <!-- ===== FOOTER ===== -->
 <footer class="footer">
   <div class="wrap">
@@ -91,14 +165,14 @@
   </div>
 </footer>
 
-<!-- ===== TO TOP BUTTON ===== -->
-<button class="to-top">↑</button>
+<!-- ===== STICKY BOTTOM AD ===== -->
+<div class="sticky-ad" id="stickyAd">
+  <button onclick="document.getElementById('stickyAd').style.display='none'">×</button>
+  <p class="ad-placeholder">Sticky Ad (728x90 / 320x50)</p>
+</div>
 
-<!-- ===== INLINE STYLES ===== -->
+<!-- ===== INLINE STYLES (ORIGINAL) ===== -->
 <style>
-.notice-section {
-  margin-top: px;
-}
 .privacy-text {
   background: var(--panel);
   border: 1px solid var(--line);
@@ -115,6 +189,7 @@
 }
 </style>
 
+<button class="to-top"><i class="fa-solid fa-arrow-up-long"></i></button>
 <script src="main.js" defer></script>
 </body>
 </html>
