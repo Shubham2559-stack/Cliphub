@@ -8,96 +8,25 @@
 <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<style>
-.ad-container{
-  background:#1b1f25;
-  border:1px dashed var(--line);
-  border-radius:10px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:var(--muted);
-  text-align:center;
-  font-size:.95rem;
-  margin:20px 0;
-  padding:8px;
-}
-.ad-container.top,
-.ad-container.bottom{min-height:90px;}
-.ad-container.title{min-height:90px;margin-top:6px;}
-.grid .ad-container{grid-column:1 / -1;}
-.sticky-ad{
-  position:fixed;
-  bottom:0;
-  left:0;
-  width:100%;
-  background:rgba(27,31,37,0.98);
-  border-top:2px solid var(--accent);
-  text-align:center;
-  z-index:4000;
-  min-height:50px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:8px 12px;
-  box-shadow:0 -6px 18px rgba(0,0,0,0.45);
-}
-.sticky-ad .close-sticky{
-  position:absolute;
-  right:10px;
-  top:6px;
-  background:transparent;
-  border:none;
-  color:var(--accent);
-  font-size:18px;
-  cursor:pointer;
-}
-.section-head{
-  display:flex;
-  align-items:flex-end;
-  justify-content:space-between;
-  margin-bottom:10px;
-}
-.bar-title{margin-bottom:0;padding-bottom:6px;}
-.ad-box{width:100%;max-width:1100px;display:flex;align-items:center;justify-content:center;padding:6px;}
-</style>
 </head>
-
 <body>
+
 <header class="topbar">
   <div class="wrap">
-   <div class="brand"><h1><a href="index.html">X ClipHub</a></h1></div>
-   <button class="to-top"><i class="fa-solid fa-arrow-up-long"></i></button>
-   <nav class="primary-nav">
-     <ul class="nav-list">
-       <li><a href="category.html?cat=MMS">MMS</a></li>
-       <li><a href="category.html?cat=Models">Models</a></li>
-       <li><a href="category.html?cat=Premium">Premium</a></li>
-       <li><a href="category.html?cat=Onlyfans">Onlyfans</a></li>
-     </ul>
-   </nav>
+   <div class="brand">
+  <h1><a href="index.html">X ClipHub</a></h1>
+</div>
+<button class="to-top"><i class="fa-solid fa-arrow-up-long"></i></button>
+    <nav class="primary-nav">
+      <ul class="nav-list">
+        <li><a href="category.html?cat=MMS">MMS</a></li>
+        <li><a href="category.html?cat=Models">Models</a></li>
+        <li><a href="category.html?cat=Premium">Premium</a></li>
+        <li><a href="category.html?cat=Onlyfans">Onlyfans</a></li>
+      </ul>
+    </nav>
   </div>
 </header>
-
-<!-- TOP BANNER -->
-<section class="wrap">
-  <div class="ad-container top">
-    <div class="ad-box">
-      <!-- 728x90 banner (your provided script) -->
-      <script type="text/javascript">
-      	atOptions = {
-      		'key' : '6efa16eadaed652e3b0334a2ed1130ab',
-      		'format' : 'iframe',
-      		'height' : 90,
-      		'width' : 728,
-      		'params' : {}
-      	};
-      </script>
-      <script type="text/javascript" src="//www.highperformanceformat.com/6efa16eadaed652e3b0334a2ed1130ab/invoke.js"></script>
-    </div>
-  </div>
-</section>
 
 <section class="wrap section top-search">
   <div class="search">
@@ -105,7 +34,6 @@
     <button id="searchBtn">🔍</button>
   </div>
 </section>
-
 <section class="wrap section">
   <div class="section-head">
     <h2 class="bar-title">Latest videos</h2>
@@ -116,24 +44,6 @@
       <option value="most">Most viewed videos</option>
     </select>
   </div>
-
-  <!-- BELOW TITLE BANNER -->
-  <div class="ad-container title wrap" aria-label="ad-below-latest-title">
-    <div class="ad-box">
-      <!-- 728x90 banner (same key) -->
-      <script type="text/javascript">
-      	atOptions = {
-      		'key' : '6efa16eadaed652e3b0334a2ed1130ab',
-      		'format' : 'iframe',
-      		'height' : 90,
-      		'width' : 728,
-      		'params' : {}
-      	};
-      </script>
-      <script type="text/javascript" src="//www.highperformanceformat.com/6efa16eadaed652e3b0334a2ed1130ab/invoke.js"></script>
-    </div>
-  </div>
-
   <div class="grid" id="latestGrid"></div>
 </section>
 
@@ -145,25 +55,6 @@
 <section class="wrap section">
   <div class="section-head"><h2 class="bar-title">Random videos</h2></div>
   <div class="grid" id="randomGrid"></div>
-</section>
-
-<!-- BOTTOM BANNER -->
-<section class="wrap">
-  <div class="ad-container bottom">
-    <div class="ad-box">
-      <!-- 728x90 banner (bottom) -->
-      <script type="text/javascript">
-      	atOptions = {
-      		'key' : '6efa16eadaed652e3b0334a2ed1130ab',
-      		'format' : 'iframe',
-      		'height' : 90,
-      		'width' : 728,
-      		'params' : {}
-      	};
-      </script>
-      <script type="text/javascript" src="//www.highperformanceformat.com/6efa16eadaed652e3b0334a2ed1130ab/invoke.js"></script>
-    </div>
-  </div>
 </section>
 
 <footer class="footer">
@@ -178,6 +69,7 @@
   </div>
 </footer>
 
+
 <template id="cardTpl">
 <article class="card">
   <div class="thumb">
@@ -185,78 +77,69 @@
     <span class="badge">▶ <b class="dur">00:00</b></span>
   </div>
   <a class="title" href="#">Clip</a>
-  <span class="views small muted">
-    <svg class="eye" viewBox="0 0 24 24">
-      <path d="M12 5c-7 0-11 7-11 7s4 7 11 7 11-7 11-7-4-7-11-7zm0 11a4 4 0 110-8 4 4 0 010 8z"/>
-    </svg>
-    <b class="view-count">0</b> views
-  </span>
+  <span class="views small muted"><svg class="eye" viewBox="0 0 24 24"><path d="M12 5c-7 0-11 7-11 7s4 7 11 7 11-7 11-7-4-7-11-7zm0 11a4 4 0 110-8 4 4 0 010 8z"/></svg> <b class="view-count">0</b> views</span>
 </article>
 </template>
-
-<!-- STICKY BOTTOM BANNER -->
-<div class="sticky-ad" id="stickyAd">
-  <button class="close-sticky" onclick="document.getElementById('stickyAd').style.display='none'">×</button>
-  <div class="ad-box">
-    <!-- 320x50 banner (sticky) -->
-    <script type="text/javascript">
-    	atOptions = {
-    		'key' : '4bb6755cf14cf3a898bff377fe1917b8',
-    		'format' : 'iframe',
-    		'height' : 50,
-    		'width' : 320,
-    		'params' : {}
-    	};
-    </script>
-    <script type="text/javascript" src="//www.highperformanceformat.com/4bb6755cf14cf3a898bff377fe1917b8/invoke.js"></script>
-  </div>
-</div>
-
 <script src="main.js" defer></script>
 
+<!-- ========== POPUNDER CONTROL (one per hour) ========== -->
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  function createAdElement(htmlContent, cls='ad-container mid'){
-    const el=document.createElement('div');
-    el.className=cls;
-    el.innerHTML=`<div class='ad-box'>${htmlContent}</div>`;
-    el.dataset.dynamicAd="true";
-    return el;
-  }
-  function insertAds(gridId, htmlContent){
-    const grid=document.getElementById(gridId);
-    if(!grid)return;
-    const obs=new MutationObserver(()=>{
-      const cards=grid.querySelectorAll('.card');
-      cards.forEach((c,i)=>{
-        if((i+1)%6===0){
-          const n=c.nextElementSibling;
-          if(!n||!n.classList.contains('ad-container')){
-            const ad=createAdElement(htmlContent);
-            c.insertAdjacentElement('afterend',ad);
-          }
-        }
-      });
-    });
-    obs.observe(grid,{childList:true});
+(function() {
+  const POP_KEY = "popupActivatedAt";
+  const ONE_HOUR = 60 * 60 * 1000; // 1 hour in ms
+
+  function getLastTime() {
+    try { return parseInt(localStorage.getItem(POP_KEY), 10) || 0; }
+    catch (e) { return 0; }
   }
 
-  // 300x250 mid-grid banner (your provided script)
-  const mid300x250 = `<script type="text/javascript">
-	atOptions = {
-		'key' : 'f9daa3cc32e035dcb7cddda0839da2a0',
-		'format' : 'iframe',
-		'height' : 250,
-		'width' : 300,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/f9daa3cc32e035dcb7cddda0839da2a0/invoke.js"></script>`;
+  function setLastTime(t) {
+    try { localStorage.setItem(POP_KEY, String(t)); }
+    catch (e) {}
+  }
 
-  insertAds('latestGrid', mid300x250);
-  insertAds('randomGrid', mid300x250);
-});
-</script>
+  function canTriggerPopup() {
+    const last = getLastTime();
+    return (!last) || (Date.now() - last) > ONE_HOUR;
+  }
 
+  function loadPopupScript() {
+    // your provided pop script wrapper (zone 10163330)
+    const s = document.createElement("script");
+    s.dataset.zone = '10163330';
+    s.src = 'https://al5sm.com/tag.min.js';
+    s.async = true;
+    document.body.appendChild(s);
+    setLastTime(Date.now());
+    // optional: console log for debugging
+    console.log("Popunder script loaded (controlled)");
+  }
+
+  // Trigger on meaningful user interactions (only if allowed by cooldown)
+  // 1) Click anywhere
+  document.addEventListener("click", function onClickOnce() {
+    if (canTriggerPopup()) loadPopupScript();
+  }, { passive: true });
+
+  // 2) Search button click
+  const searchBtn = document.getElementById("searchBtn");
+  if (searchBtn) {
+    searchBtn.addEventListener("click", function() {
+      if (canTriggerPopup()) loadPopupScript();
+    }, { passive: true });
+  }
+
+  // 3) As a fallback, trigger on first user-initiated play event (video)
+  document.addEventListener("play", function(e) {
+    if (e.target && e.target.tagName === "VIDEO") {
+      if (canTriggerPopup()) loadPopupScript();
+    }
+  }, true);
+
+})();
+</script>
+<!-- ========== END POPUNDER CONTROL ========== -->
+
+<button class="to-top"><i class="fa-solid fa-arrow-up-long"></i></button>
 </body>
 </html>
