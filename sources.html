@@ -3,10 +3,64 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>ClipHub - Video Sources</title>
+<title>X ClipHub - Video Sources</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- ===== INLINE CSS FOR AD SYSTEM (OPTIMIZED) ===== -->
+<style>
+.ad-container {
+  background:#1b1f25;
+  border:1px dashed var(--line);
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--muted);
+  text-align:center;
+  font-size:.95rem;
+  margin:18px 0;
+  overflow:hidden;
+  padding:8px;
+}
+.ad-container.top,
+.ad-container.bottom { min-height:90px; }
+.ad-container.mid { min-height:250px; }
+.ad-placeholder { opacity:0.85; }
+
+/* ===== Sticky Bottom Ad ===== */
+.sticky-ad {
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  background:#1b1f25;
+  border-top:2px solid var(--accent);
+  text-align:center;
+  z-index:4000;
+  min-height:60px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.sticky-ad button {
+  position:absolute;
+  right:8px;
+  top:4px;
+  background:none;
+  border:none;
+  color:#ff709f;
+  font-size:18px;
+  cursor:pointer;
+}
+@media(max-width:768px){
+  .ad-container.top,
+  .ad-container.bottom { min-height:100px; }
+  .sticky-ad { min-height:50px; }
+}
+</style>
 </head>
 
 <body>
@@ -14,50 +68,55 @@
 <!-- ===== HEADER ===== -->
 <header class="topbar">
   <div class="wrap">
-    <div class="brand"><span class="dot"></span><h1>ClipHub</h1></div>
+    <div class="brand">
+      <h1><a href="index.html">X ClipHub</a></h1>
+    </div>
     <nav class="primary-nav">
       <ul class="nav-list">
-        <li><a href="category.html?cat=Trending">Trending</a></li>
-        <li><a href="category.html?cat=Vlogs">Vlogs</a></li>
-        <li><a href="category.html?cat=Tutorials">Tutorials</a></li>
-        <li><a href="category.html?cat=Music">Music</a></li>
+        <li><a href="category.html?cat=MMS">MMS</a></li>
+        <li><a href="category.html?cat=Models">Models</a></li>
+        <li><a href="category.html?cat=Premium">Premium</a></li>
+        <li><a href="category.html?cat=Onlyfans">Onlyfans</a></li>
       </ul>
     </nav>
   </div>
 </header>
 
-<!-- ===== BOOKMARK NOTICE ===== -->
-<section class="wrap section notice-section">
-  <div class="notice">
-    <span class="warn">⚠</span> Bookmark: cliphub.example
+<!-- ===== TOP AD ===== -->
+<section class="wrap">
+  <div class="ad-container top">
+    <p class="ad-placeholder">Ad Space (Top Banner 728x90 / 320x100)</p>
   </div>
 </section>
 
-<!-- ===== PAGE CONTENT ===== -->
+<!-- ===== PAGE TITLE ===== -->
 <section class="wrap section">
   <div class="section-head">
     <h2 class="bar-title">Video Sources</h2>
   </div>
 
+  <!-- ===== BELOW TITLE AD ===== -->
+  <div class="ad-container mid">
+    <p class="ad-placeholder">Ad Space (Below Title 300x250)</p>
+  </div>
+
   <div class="source-list">
     <article class="source">
-      <h3 class="src-title">ClipZone Media</h3>
+      <h3 class="src-title">Desijugar</h3>
       <p class="muted">
-        ClipZone provides a library of copyright-free short clips, educational videos, and creative content suitable for learning, entertainment, and demo purposes.
+        Desijugar is a platform that hosts a variety of desi entertainment content, including videos and web series. The site features categories such as Desi Model Videos, Model Live Videos, Actress Paid Videos, and Uncut Webseries. It caters to an audience seeking regional and desi-themed media content.
       </p>
     </article>
 
-    <article class="source">
-      <h3 class="src-title">OpenStream Hub</h3>
-      <p class="muted">
-        OpenStream Hub hosts community-submitted open-license videos for creators and students. All content is shared under free-use or educational licenses.
-      </p>
-    </article>
+    <!-- ===== MID CONTENT AD ===== -->
+    <div class="ad-container mid">
+      <p class="ad-placeholder">Ad Space (Mid Content 300x250)</p>
+    </div>
 
     <article class="source">
-      <h3 class="src-title">FreeMedia Vault</h3>
+      <h3 class="src-title">DropMMS</h3>
       <p class="muted">
-        FreeMedia Vault offers tutorials, travel footage, and creative commons media clips that can be embedded or used for personal viewing projects.
+        DropMMS serves as the official portal for DropMMS, offering a curated selection of trending social media content, viral videos, and updates from influencers. The platform emphasizes safety, speed, and quality, aiming to provide family-friendly media content in a user-friendly interface.
       </p>
     </article>
 
@@ -70,47 +129,55 @@
   </div>
 </section>
 
+<!-- ===== ABOVE FOOTER AD ===== -->
+<section class="wrap">
+  <div class="ad-container bottom">
+    <p class="ad-placeholder">Ad Space (Above Footer 728x90 / 320x100)</p>
+  </div>
+</section>
+
 <!-- ===== FOOTER ===== -->
 <footer class="footer">
   <div class="wrap">
     <div class="links">
       <a href="sources.html">Video Sources</a>
-      <a href="dmca.html">DMCA</a>
       <a href="privacy.html">Privacy</a>
+      <a href="dmca.html">DMCA</a>
       <a href="contact.html">Contact</a>
     </div>
     <p class="muted small">All Rights Reserved</p>
   </div>
 </footer>
 
-<!-- ===== TO TOP BUTTON ===== -->
-<button class="to-top">↑</button>
+<!-- ===== STICKY BOTTOM AD ===== -->
+<div class="sticky-ad" id="stickyAd">
+  <button onclick="document.getElementById('stickyAd').style.display='none'">×</button>
+  <p class="ad-placeholder">Sticky Ad (728x90 / 320x50)</p>
+</div>
 
-<!-- ===== INLINE STYLES ===== -->
+<!-- ===== INLINE STYLES FOR SOURCE SECTION ===== -->
 <style>
-.notice-section {
-  margin-top: px; /* adjusted for perfect visual balance */
-}
 .source-list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  margin-top: 12px;
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+  margin-top:12px;
 }
 .source {
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 16px;
-  box-shadow: var(--shadow);
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:16px;
+  box-shadow:var(--shadow);
 }
 .src-title {
-  color: var(--accent);
-  margin-bottom: 6px;
-  font-size: 1.15rem;
+  color:var(--accent);
+  margin-bottom:6px;
+  font-size:1.15rem;
 }
 </style>
 
+<button class="to-top"><i class="fa-solid fa-arrow-up-long"></i></button>
 <script src="main.js" defer></script>
 </body>
 </html>
