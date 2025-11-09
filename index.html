@@ -9,114 +9,92 @@
 <link rel="stylesheet" href="styles.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<!-- ===== INLINE CSS FOR AD SYSTEM + ALIGNMENT FIX ===== -->
 <style>
-/* Base ad container */
-.ad-container {
-  background: #1b1f25;
-  border: 1px dashed var(--line);
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--muted);
-  text-align: center;
-  font-size: 0.95rem;
-  margin: 20px 0;
-  overflow: hidden;
-  padding: 8px;
+.ad-container{
+  background:#1b1f25;
+  border:1px dashed var(--line);
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--muted);
+  text-align:center;
+  font-size:.95rem;
+  margin:20px 0;
+  padding:8px;
 }
-
-/* Ad sizes */
-.ad-container.top, .ad-container.bottom { min-height: 90px; }
-.ad-container.title { min-height: 90px; margin-top: 6px; } /* ✅ aligned perfectly */
-.ad-container.mid { min-height: 250px; }
-.ad-container.small { min-height: 60px; }
-
-/* Grid ad full width */
-.grid .ad-container { grid-column: 1 / -1; }
-
-.ad-placeholder { opacity: 0.85; }
-
-/* Sticky bottom ad */
-.sticky-ad {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(27,31,37,0.98);
-  border-top: 2px solid var(--accent);
-  text-align: center;
-  z-index: 4000;
-  min-height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px 12px;
-  box-shadow: 0 -6px 18px rgba(0,0,0,0.45);
+.ad-container.top,
+.ad-container.bottom{min-height:90px;}
+.ad-container.title{min-height:90px;margin-top:6px;}
+.grid .ad-container{grid-column:1 / -1;}
+.sticky-ad{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  background:rgba(27,31,37,0.98);
+  border-top:2px solid var(--accent);
+  text-align:center;
+  z-index:4000;
+  min-height:50px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:8px 12px;
+  box-shadow:0 -6px 18px rgba(0,0,0,0.45);
 }
-.sticky-ad .close-sticky {
-  position: absolute;
-  right: 10px;
-  top: 6px;
-  background: transparent;
-  border: none;
-  color: var(--accent);
-  font-size: 18px;
-  cursor: pointer;
+.sticky-ad .close-sticky{
+  position:absolute;
+  right:10px;
+  top:6px;
+  background:transparent;
+  border:none;
+  color:var(--accent);
+  font-size:18px;
+  cursor:pointer;
 }
-@media (max-width: 480px) {
-  .sticky-ad { min-height: 48px; padding: 6px; }
+.section-head{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  margin-bottom:10px;
 }
-
-/* Alignment fix between bar-title and ad container */
-.section-head {
-  display: flex;
-  align-items: flex-end; /* ✅ ensures bottom of "Latest Videos" aligns with top of ad */
-  justify-content: space-between;
-  margin-bottom: 10px; /* tighter spacing for smooth flow */
-}
-
-.bar-title {
-  margin-bottom: 0; /* removes extra gap below title */
-  padding-bottom: 6px;
-}
-
-.ad-box {
-  width: 100%;
-  max-width: 1100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 6px;
-}
+.bar-title{margin-bottom:0;padding-bottom:6px;}
+.ad-box{width:100%;max-width:1100px;display:flex;align-items:center;justify-content:center;padding:6px;}
 </style>
 </head>
-<body>
 
+<body>
 <header class="topbar">
   <div class="wrap">
-   <div class="brand">
-  <h1><a href="index.html">X ClipHub</a></h1>
-</div>
-<button class="to-top"><i class="fa-solid fa-arrow-up-long"></i></button>
-    <nav class="primary-nav">
-      <ul class="nav-list">
-        <li><a href="category.html?cat=MMS">MMS</a></li>
-        <li><a href="category.html?cat=Models">Models</a></li>
-        <li><a href="category.html?cat=Premium">Premium</a></li>
-        <li><a href="category.html?cat=Onlyfans">Onlyfans</a></li>
-      </ul>
-    </nav>
+   <div class="brand"><h1><a href="index.html">X ClipHub</a></h1></div>
+   <button class="to-top"><i class="fa-solid fa-arrow-up-long"></i></button>
+   <nav class="primary-nav">
+     <ul class="nav-list">
+       <li><a href="category.html?cat=MMS">MMS</a></li>
+       <li><a href="category.html?cat=Models">Models</a></li>
+       <li><a href="category.html?cat=Premium">Premium</a></li>
+       <li><a href="category.html?cat=Onlyfans">Onlyfans</a></li>
+     </ul>
+   </nav>
   </div>
 </header>
 
-<!-- ===== AD #1 - TOP BANNER ===== -->
+<!-- TOP BANNER -->
 <section class="wrap">
   <div class="ad-container top">
     <div class="ad-box">
-      <!-- Paste your Adsterra top banner script here -->
-      <p class="ad-placeholder">Ad Space (Top Banner) — Paste Adsterra script here</p>
+      <!-- 728x90 banner (your provided script) -->
+      <script type="text/javascript">
+      	atOptions = {
+      		'key' : '6efa16eadaed652e3b0334a2ed1130ab',
+      		'format' : 'iframe',
+      		'height' : 90,
+      		'width' : 728,
+      		'params' : {}
+      	};
+      </script>
+      <script type="text/javascript" src="//www.highperformanceformat.com/6efa16eadaed652e3b0334a2ed1130ab/invoke.js"></script>
     </div>
   </div>
 </section>
@@ -139,10 +117,20 @@
     </select>
   </div>
 
-  <!-- ===== AD BELOW TITLE (Now perfectly aligned) ===== -->
+  <!-- BELOW TITLE BANNER -->
   <div class="ad-container title wrap" aria-label="ad-below-latest-title">
     <div class="ad-box">
-      <p class="ad-placeholder">Ad Space (Below Latest Title) — Paste Adsterra script here</p>
+      <!-- 728x90 banner (same key) -->
+      <script type="text/javascript">
+      	atOptions = {
+      		'key' : '6efa16eadaed652e3b0334a2ed1130ab',
+      		'format' : 'iframe',
+      		'height' : 90,
+      		'width' : 728,
+      		'params' : {}
+      	};
+      </script>
+      <script type="text/javascript" src="//www.highperformanceformat.com/6efa16eadaed652e3b0334a2ed1130ab/invoke.js"></script>
     </div>
   </div>
 
@@ -159,11 +147,21 @@
   <div class="grid" id="randomGrid"></div>
 </section>
 
-<!-- ===== AD ABOVE FOOTER ===== -->
+<!-- BOTTOM BANNER -->
 <section class="wrap">
   <div class="ad-container bottom">
     <div class="ad-box">
-      <p class="ad-placeholder">Ad Space (Bottom Banner) — Paste Adsterra script here</p>
+      <!-- 728x90 banner (bottom) -->
+      <script type="text/javascript">
+      	atOptions = {
+      		'key' : '6efa16eadaed652e3b0334a2ed1130ab',
+      		'format' : 'iframe',
+      		'height' : 90,
+      		'width' : 728,
+      		'params' : {}
+      	};
+      </script>
+      <script type="text/javascript" src="//www.highperformanceformat.com/6efa16eadaed652e3b0334a2ed1130ab/invoke.js"></script>
     </div>
   </div>
 </section>
@@ -187,31 +185,45 @@
     <span class="badge">▶ <b class="dur">00:00</b></span>
   </div>
   <a class="title" href="#">Clip</a>
-  <span class="views small muted"><svg class="eye" viewBox="0 0 24 24"><path d="M12 5c-7 0-11 7-11 7s4 7 11 7 11-7 11-7-4-7-11-7zm0 11a4 4 0 110-8 4 4 0 010 8z"/></svg> <b class="view-count">0</b> views</span>
+  <span class="views small muted">
+    <svg class="eye" viewBox="0 0 24 24">
+      <path d="M12 5c-7 0-11 7-11 7s4 7 11 7 11-7 11-7-4-7-11-7zm0 11a4 4 0 110-8 4 4 0 010 8z"/>
+    </svg>
+    <b class="view-count">0</b> views
+  </span>
 </article>
 </template>
 
-<!-- Sticky bottom ad -->
+<!-- STICKY BOTTOM BANNER -->
 <div class="sticky-ad" id="stickyAd">
   <button class="close-sticky" onclick="document.getElementById('stickyAd').style.display='none'">×</button>
   <div class="ad-box">
-    <p class="ad-placeholder">Sticky Ad (Responsive Banner) — Paste Adsterra script here</p>
+    <!-- 320x50 banner (sticky) -->
+    <script type="text/javascript">
+    	atOptions = {
+    		'key' : '4bb6755cf14cf3a898bff377fe1917b8',
+    		'format' : 'iframe',
+    		'height' : 50,
+    		'width' : 320,
+    		'params' : {}
+    	};
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/4bb6755cf14cf3a898bff377fe1917b8/invoke.js"></script>
   </div>
 </div>
 
 <script src="main.js" defer></script>
 
-<!-- Dynamic in-grid ad insertion -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  function createAdElement(text, cls='ad-container mid'){
+  function createAdElement(htmlContent, cls='ad-container mid'){
     const el=document.createElement('div');
     el.className=cls;
-    el.innerHTML=`<div class='ad-box'><p class='ad-placeholder'>${text}</p></div>`;
+    el.innerHTML=`<div class='ad-box'>${htmlContent}</div>`;
     el.dataset.dynamicAd="true";
     return el;
   }
-  function insertAds(gridId,text){
+  function insertAds(gridId, htmlContent){
     const grid=document.getElementById(gridId);
     if(!grid)return;
     const obs=new MutationObserver(()=>{
@@ -220,7 +232,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if((i+1)%6===0){
           const n=c.nextElementSibling;
           if(!n||!n.classList.contains('ad-container')){
-            const ad=createAdElement(text);
+            const ad=createAdElement(htmlContent);
             c.insertAdjacentElement('afterend',ad);
           }
         }
@@ -228,9 +240,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     obs.observe(grid,{childList:true});
   }
-  insertAds('latestGrid','Ad Space (Between Latest Videos) — Paste Adsterra script here');
-  insertAds('randomGrid','Ad Space (Between Random Videos) — Paste Adsterra script here');
+
+  // 300x250 mid-grid banner (your provided script)
+  const mid300x250 = `<script type="text/javascript">
+	atOptions = {
+		'key' : 'f9daa3cc32e035dcb7cddda0839da2a0',
+		'format' : 'iframe',
+		'height' : 250,
+		'width' : 300,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/f9daa3cc32e035dcb7cddda0839da2a0/invoke.js"></script>`;
+
+  insertAds('latestGrid', mid300x250);
+  insertAds('randomGrid', mid300x250);
 });
 </script>
+
 </body>
 </html>
