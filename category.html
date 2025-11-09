@@ -3,26 +3,66 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ClipHub - Category</title>
+<title>X ClipHub - Category</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="styles.css">
+
+<!-- ===== INLINE CSS FOR AD SYSTEM ===== -->
+<style>
+.ad-container {
+  background:#1b1f25;
+  border:1px dashed var(--line);
+  border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--muted);text-align:center;
+  font-size:.95rem;margin:20px 0;padding:8px;
+}
+.ad-container.top,.ad-container.bottom{min-height:90px;}
+.ad-container.mid{min-height:250px;}
+.ad-placeholder{opacity:.85;}
+.grid .ad-container { grid-column: 1 / -1; }
+.sticky-ad{
+  position:fixed;bottom:0;left:0;width:100%;
+  background:rgba(27,31,37,.98);
+  border-top:2px solid var(--accent);
+  z-index:4000;display:flex;align-items:center;justify-content:center;
+  min-height:50px;padding:6px 12px;box-shadow:0 -6px 18px rgba(0,0,0,.4);
+}
+.sticky-ad .close-sticky{
+  position:absolute;right:8px;top:4px;
+  background:none;border:none;color:var(--accent);
+  font-size:18px;cursor:pointer;
+}
+@media(max-width:480px){.sticky-ad{min-height:46px;}}
+</style>
 </head>
 <body>
 
 <header class="topbar">
   <div class="wrap">
-    <div class="brand"><span class="dot"></span><h1>ClipHub</h1></div>
+    <div class="brand">
+      <h1><a href="index.html">X ClipHub</a></h1>
+    </div>
     <nav class="primary-nav">
       <ul class="nav-list">
-        <li><a href="category.html?cat=Trending">Trending</a></li>
-        <li><a href="category.html?cat=Vlogs">Vlogs</a></li>
-        <li><a href="category.html?cat=Tutorials">Tutorials</a></li>
-        <li><a href="category.html?cat=Music">Music</a></li>
+        <li><a href="category.html?cat=MMS">MMS</a></li>
+        <li><a href="category.html?cat=Models">Models</a></li>
+        <li><a href="category.html?cat=Premium">Premium</a></li>
+        <li><a href="category.html?cat=Onlyfans">Onlyfans</a></li>
       </ul>
     </nav>
   </div>
 </header>
+
+<!-- ===== AD #1 - TOP BANNER ===== -->
+<section class="wrap">
+  <div class="ad-container top">
+    <!-- Paste your Adsterra top banner script here (728x90 / 320x100) -->
+    <p class="ad-placeholder">Ad Space (Top Banner)</p>
+  </div>
+</section>
 
 <section class="wrap section top-search">
   <div class="search">
@@ -31,18 +71,31 @@
   </div>
 </section>
 
-<section class="wrap">
-  <div class="notice">
-    <span class="warn">⚠</span> Bookmark: cliphub.example
-  </div>
-</section>
-
 <section class="wrap section">
   <h2 class="bar-title" id="catName">Category</h2>
 </section>
 
+<!-- ===== AD #2 - BELOW TITLE ===== -->
+<section class="wrap">
+  <div class="ad-container mid">
+    <!-- Paste your Adsterra script here (300x250) -->
+    <p class="ad-placeholder">Ad Space (Below Category Title)</p>
+  </div>
+</section>
+
 <section class="wrap section">
   <div class="grid" id="catGrid"></div>
+</section>
+
+<!-- ===== AD #3 - BETWEEN POSTS (auto insertion) ===== -->
+<!-- Automatically handled via script after every 6 cards -->
+
+<!-- ===== AD #4 - ABOVE FOOTER ===== -->
+<section class="wrap">
+  <div class="ad-container bottom">
+    <!-- Paste your Adsterra bottom banner (728x90 / 320x100) -->
+    <p class="ad-placeholder">Ad Space (Above Footer)</p>
+  </div>
 </section>
 
 <footer class="footer">
@@ -57,8 +110,14 @@
   </div>
 </footer>
 
-<button class="to-top">↑</button>
+<!-- ===== STICKY AD (DISMISSIBLE) ===== -->
+<div class="sticky-ad" id="stickyAd">
+  <button class="close-sticky" onclick="document.getElementById('stickyAd').style.display='none'">×</button>
+  <!-- Paste Adsterra small sticky ad code (320x50 / 468x60) -->
+  <p class="ad-placeholder">Sticky Ad (Responsive Banner)</p>
+</div>
 
+<!-- ===== CARD TEMPLATE ===== -->
 <template id="cardTpl">
 <article class="card">
   <div class="thumb">
@@ -70,6 +129,49 @@
 </article>
 </template>
 
+<button class="to-top"><i class="fa-solid fa-arrow-up-long"></i></button>
 <script src="main.js" defer></script>
+
+<!-- ===== INLINE SCRIPT TO ADD AD AFTER EVERY 6 CARDS ===== -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  function createAd(text) {
+    const ad = document.createElement("div");
+    ad.className = "ad-container mid";
+    ad.innerHTML = "<p class='ad-placeholder'>" + text + "</p>";
+    ad.dataset.dynamicAd = "true";
+    return ad;
+  }
+
+  function setupGridAds(gridId, placeholder) {
+    const grid = document.getElementById(gridId);
+    if (!grid) return;
+    const observer = new MutationObserver(() => {
+      const cards = grid.querySelectorAll(".card");
+      cards.forEach((card, i) => {
+        if ((i + 1) % 6 === 0) {
+          const next = card.nextElementSibling;
+          if (!next || !next.classList.contains("ad-container")) {
+            const ad = createAd(placeholder);
+            grid.insertBefore(ad, next);
+          }
+        }
+      });
+    });
+    observer.observe(grid, { childList: true });
+  }
+
+  setupGridAds("catGrid", "Ad Space (Between Category Videos) — Paste Adsterra script here");
+});
+</script>
+<script>
+if(!sessionStorage.getItem("smartlink_shown")){
+  document.addEventListener("click", function triggerSmartlink(){
+    window.open("https://www.profitablecpmnetwork.com/smartlink/YOURCODE", "_blank");
+    sessionStorage.setItem("smartlink_shown","1");
+    document.removeEventListener("click", triggerSmartlink);
+  });
+}
+</script>
 </body>
 </html>
